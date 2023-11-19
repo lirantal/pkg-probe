@@ -23,6 +23,9 @@
     "port": "{PORT}",
     "logger": {
       "level": "{PLT_SERVER_LOGGER_LEVEL}"
+    },
+    "cors": {
+      "origin": "{PLT_SERVER_CORS_ORIGIN}"
     }
   }
 }

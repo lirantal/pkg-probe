@@ -9,8 +9,13 @@
       {
         "path": "./plugins",
         "encapsulate": false
-      },
-      "./routes"
+      },      
+      {
+        "path": "./routes",
+        "options": {
+           "snykApiToken": "{PLT_SNYK_API_TOKEN}"
+       }
+      }
     ]
   },
   "server": {

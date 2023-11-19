@@ -1,8 +1,6 @@
 /// <reference path="../global.d.ts" />
 "use strict";
 
-const config = require("dotenv").config();
-
 /** @param {import('fastify').FastifyInstance} fastify */
 module.exports = async function (fastify, opts) {
   fastify.get("/example", async (request, reply) => {
@@ -13,7 +11,7 @@ module.exports = async function (fastify, opts) {
     const packageName = request.query.packageName;
     const packageVersion = request.query.packageVersion;
 
-    const snykApiToken = config.parsed.SNYK_API_TOKEN;
+    const snykApiToken = opts.snykApiToken;
     const url = `https://snyk.io/api/v1/test/npm/${packageName}/${packageVersion}`;
 
     const response = await fetch(url, {

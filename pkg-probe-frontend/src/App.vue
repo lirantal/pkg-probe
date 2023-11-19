@@ -78,6 +78,62 @@ async function scanPackage() {
               Scan for security vulnerabilities
             </button>
           </div>
+
+          <div
+            v-if="vulnerabilities.length > 0"
+            class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
+          >
+            <div class="">
+              <div
+                v-for="(vulnerability, index) in vulnerabilities"
+                :key="index"
+                class="p-2 w-full"
+              >
+                <div class="bg-gray-100 rounded p-4 h-full items-center">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="3"
+                    class="text-red-500 w-6 h-6 flex-shrink-0 mr-4"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                  </svg>
+                  <span class="title-font font-medium">
+                    {{ vulnerability.id }}
+                  </span>
+                  <div class="">
+                    <p class="">
+                      {{ vulnerability.title }} in {{ vulnerability.package }}
+                    </p>
+                    <p>
+                      <a
+                        :href="vulnerability.url"
+                        target="_blank"
+                        class="text-indigo-500 inline-flex items-center"
+                        >Learn More
+                        <svg
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          class="w-4 h-4 ml-2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M5 12h14M12 5l7 7-7 7"></path></svg
+                      ></a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div
             class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"
           >

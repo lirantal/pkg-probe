@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "platformatic start",
+    "deploy": "platformatic deploy",
     "test": "node --test test/*/*.test.js"
   },
   "devDependencies": {
